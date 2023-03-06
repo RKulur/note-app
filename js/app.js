@@ -11,7 +11,7 @@ handleModal(addModal, addBtn);
 //<----- POSTING DATA TO LOCAL STORAGE ------------------------->
 
 const addForm = document.querySelector("#addForm");
-const key = Math.floor(Math.random(10000000000)*10000000000)
+const key = localStorage.length + 1
 dataFromForm(key, addForm);
 
 //<----- RETRIEVE DATA FROM LOCAL STORAGE ---------------------->
@@ -19,7 +19,7 @@ dataFromForm(key, addForm);
 function retrieveData() {
   for (let i of Object.keys(localStorage).sort()) {
     let data = JSON.parse(localStorage.getItem(i));
-    createNote(data);
+    createNote(i,data);
   }
 }
 
@@ -36,7 +36,8 @@ const cards = document.querySelectorAll(".card");
 Array.from(cards).forEach((e, index) => {
   e.querySelector(".delete").addEventListener("click", () => {
     let isConfirmed = confirm("This note will be deleted permanently ?");
-    let key = index + 1;
+    let key = e.dataset.key;
+    console.log(key)
 
     if (isConfirmed) {
       deleteData(key);
@@ -54,9 +55,11 @@ Array.from(cards).forEach((e, index) => {
   let updateBtn = e.querySelector(".update");
   handleModal(updateModal, updateBtn);
 
-  let key = index + 1;
-
+  
+  
   updateBtn.addEventListener("click", () => {
+    let key = e.dataset.key;
+    console.log(key)
     let data = JSON.parse(localStorage.getItem(key));
     document.querySelector("#updateTitle").value = data.title;
     document.querySelector("#updateDescription").value = data.description;
