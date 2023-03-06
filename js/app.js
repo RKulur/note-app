@@ -11,7 +11,7 @@ handleModal(addModal, addBtn);
 //<----- POSTING DATA TO LOCAL STORAGE ------------------------->
 
 const addForm = document.querySelector("#addForm");
-const key = localStorage.length + 1;
+const key = Math.floor(Math.random(10000000000)*10000000000)
 dataFromForm(key, addForm);
 
 //<----- RETRIEVE DATA FROM LOCAL STORAGE ---------------------->
