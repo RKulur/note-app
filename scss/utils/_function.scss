@@ -1,0 +1,8 @@
+@use 'sass:math' ;
+
+@function rem($size){
+    @if(math.is-unitless($size)){
+        @return calc($size / 16)+rem;
+    }
+    @error 'Error in rem function';
+}

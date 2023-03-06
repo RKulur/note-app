@@ -1,0 +1,38 @@
+@use "../utils/function" as f;
+@use "../utils/colors" as c;
+@use "../utils/variables" as v;
+
+header {
+  width: 100%;
+}
+
+.topBar {
+  height: f.rem(30);
+  background-color: c.$grey;
+}
+
+.navbar {
+  height: f.rem(90);
+  display: grid;
+  grid-template-columns: 1.5fr 2fr 4fr;
+  align-items: center;
+  padding-left: v.$margin;
+  padding-right: v.$margin;
+
+  &__navItemContainer {
+    > li:not(:first-child) {
+      margin-left: f.rem(60);
+    }
+  }
+
+  &__imgContainer {
+    justify-content: end;
+    img {
+        border-radius: f.rem(6);
+      object-fit: cover;
+      height: f.rem(60);
+      width: f.rem(120);
+      filter:grayscale(.5)
+    }
+  }
+}

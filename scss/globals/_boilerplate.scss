@@ -1,0 +1,50 @@
+@use '../utils/function' as f;
+@use '../utils/colors' as c;
+
+*,*::before,*::after{
+    box-sizing: border-box;
+}
+
+*{
+    margin:0;
+    padding: 0;
+    font-family:'Montserrat', sans-serif; 
+}
+
+a,a:hover,a:active{
+    text-decoration: none;
+    color: black;
+}
+
+li{
+    list-style: none;
+}
+
+
+body{
+    background-color: rgba(255, 244, 226, 0.077);
+}
+
+.b{
+    // border: f.rem(1) solid;
+}
+
+.flex{
+    display: flex;
+}
+
+button{
+    outline: none;
+    border: none;
+}
+
+input{
+    outline: none;
+    border: none;
+}
+
+input::placeholder{
+    text-align: center;
+}
+
+

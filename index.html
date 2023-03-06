@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RAMRAHIM'S NOTES</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Public+Sans:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./js/app.js" defer type="module"></script>
+    <script
+      src="https://kit.fontawesome.com/6cc4e2437f.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body class="">
+    <header>
+      <nav class="topBar"></nav>
+      <nav class="navbar" id="navbar">
+        <h1 class="navbar__heading"><em>RAMRAHIM'S NOTES</em></h1>
+        <ul class="navbar__navItemContainer flex" style="visibility:hidden">
+          <li><a>Notes</a></li>
+          <li><a>Reminder</a></li>
+          <li><a>Setting</a></li>
+        </ul>
+        <div class="navbar__imgContainer flex">
+          <img
+            title="Dishoooooom...."
+            src="./assets/images/ramrahim-logo.png"
+            alt=""
+          />
+        </div>
+      </nav>
+    </header>
+    <main id="main" class=" b">
+      <aside class="aside flex b">
+        <button id="addBtn"><strong>+</strong></button>
+      </aside>
+      <section class="cardContainer b" id="cardContainer">
+      </section>
+    </main>
+    <div class="modal" id="addModal">
+      <i id="addModalClose" class="fa-solid fa-xmark close"></i>
+      <form action="" method="POST" id="addForm">
+        <h1>ADD NOTE</h1>
+        <input type="text" name="title" id="addTitle" class="title" placeholder="Enter title" required autofocus >
+        <input type="text" name="description" id="addDescription" class="description" placeholder="Enter description" required>
+        <button id="addSubmit" type="submit" >Add Note</button>
+      </form>
+    </div>
+    <div class="modal" id="updateModal">
+      <i id="updateModalClose" class="fa-solid fa-xmark close"></i>
+      <form action="" method="POST" id="updateForm">
+        <h1>UPDATE NOTE</h1>
+        <input type="text" name="title" id="updateTitle" placeholder="Enter title" class="title" required autofocus>
+        <input type="text" name="description" id="updateDescription" placeholder="Enter description" class="description" required>
+        <button id="updateSubmit" type="submit" >Update Note</button>
+      </form>
+    </div>
+  </body>
+</html>
